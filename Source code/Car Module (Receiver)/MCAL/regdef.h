@@ -1,0 +1,221 @@
+/*
+ * regdef.h
+ *
+ * Created: 8/15/2026 8:03:46 PM
+ *  Author: adham
+ */ 
+
+
+#ifndef REGDEF_H_
+#define REGDEF_H_
+
+
+
+//	Status register
+#define SREG_REG   *((volatile u8*)(0x5F))		
+// ---------------------------------------
+
+//	Timer Interrupt Registers
+#define TIMSK_REG       *((volatile u8*)(0x59))		// Interrupt Mask Register (Enables Timer Interrupts)
+#define TIMSK_TOIE0     0							// Timer0 Overflow Interrupt Enable Bit
+#define TIMSK_OCIE0     1							// Timer0 OCR Interrupt Enable Bit
+#define TIMSK_TOIE1     2							// Timer1 Overflow Interrupt Enable Bit
+#define TIMSK_OCIE1B    3							// Timer1 Compare Match B Interrupt Enable Bit
+#define TIMSK_OCIE1A    4							// Timer1 Compare Match A Interrupt Enable Bit
+#define TIMSK_TICIE1    5							// Timer1 Input Capture Interrupt Enable Bit
+
+#define TIFR_REG        *((volatile u8*)(0x58))		// Interrupt Flag Register (gets cleared automatically if GIE and TIMSK are enabled)
+#define TIFR_TOV0       0							// Timer0 Overflow Flag Bit
+#define TIFR_OCF0       1							// Timer0 OCR Flag Bit
+#define TIFR_TOV1       2							// Timer1 Overflow Flag Bit
+#define TIFR_OCF1B      3							// Timer1 Compare Match B Flag Bit
+#define TIFR_OCF1A      4							// Timer1 Compare Match A Flag Bit
+#define TIFR_ICF1       5							// Timer1 Input Capture Flag Bit
+// ---------------------------------------
+
+//	External interrupt registers
+#define GICR_REG   *((volatile u8*)(0x5B))		//	General Interrupt Control Register
+#define GICR_INT2   5
+#define GICR_INT0   6
+#define GICR_INT1   7
+#define GIFR_REG   *((volatile u8*)(0x5A))		//  General Interrupt Flag Register
+#define GIFR_INTF2  5
+#define GIFR_INTF0  6
+#define GIFR_INTF1  7
+#define MCUCR_REG  *((volatile u8*)(0x55))		//	MCU control register
+#define MCUCR_ISC00 0
+#define MCUCR_ISC01 1
+#define MCUCR_ISC10 2
+#define MCUCR_ISC11 3
+#define MCUCSR_REG *((volatile u8*)(0x54))		//	MCU control and status register
+#define MCUCSR_ISC2	6		
+// ---------------------------------------
+
+//	Direct Input/Output registers
+#define PORTA_REG  *((volatile u8*)(0x3B))
+#define DDRA_REG   *((volatile u8*)(0x3A))
+#define PINA_REG   *((volatile u8*)(0x39))
+
+#define PORTB_REG  *((volatile u8*)(0x38))
+#define DDRB_REG   *((volatile u8*)(0x37))
+#define PINB_REG   *((volatile u8*)(0x36))
+
+#define PORTC_REG  *((volatile u8*)(0x35))
+#define DDRC_REG   *((volatile u8*)(0x34))
+#define PINC_REG   *((volatile u8*)(0x33))
+
+#define PORTD_REG  *((volatile u8*)(0x32))
+#define DDRD_REG   *((volatile u8*)(0x31))
+#define PIND_REG   *((volatile u8*)(0x30))
+// ---------------------------------------
+
+//	Analogue to Digital Converter registers
+#define ADMUX_REG	*((volatile u8*)(0x27))
+#define	ADMUX_ADLAR	5
+#define	ADMUX_REFS0	6
+#define ADMUX_REFS1	7
+#define ADCSRA_REG	*((volatile u8*)(0x26))
+#define	ADCSRA_ADPS0 0
+#define	ADCSRA_ADPS1 1
+#define ADCSRA_ADPS2 2
+#define	ADCSRA_ADIE	 3
+#define	ADCSRA_ADIF	 4
+#define	ADCSRA_ADATE 5
+#define	ADCSRA_ADSC	 6
+#define ADCSRA_ADEN	 7
+#define ADCH_REG	*((volatile u8*)(0x25))
+#define ADCL_REG	*((volatile u8*)(0x24))
+#define ADC_REG		*((volatile u16*)(0x24))
+// ---------------------------------------
+
+//	Timer 0 registers
+#define TCCR0_REG	*((volatile u8*)(0x53))		//	Timer/Counter Control Register
+#define TCCR0_COM00 4							//	Timer0 Compare Output Mode 00
+#define	TCCR0_COM01 5							//	Timer0 Compare Output Mode 01
+#define TCCR0_WGM01 3							//	Timer0 Waveform generation mode 01
+#define TCCR0_WGM00 6							//	Timer0 Waveform generation mode 00
+#define	TCCR0_FOC0  7							//	Timer0 Force Output Compare
+#define TCNT0_REG	*((volatile u8*)(0x52))		//	Timer/Counter Register
+#define OCR0_REG	*((volatile u8*)(0x5C))		//	Output Compare Register
+// ---------------------------------------
+
+//	Timer 1 registers
+#define TCCR1A_REG      *((volatile u8*)(0x4F))		//	Timer/Counter1 Control Register A
+#define TCCR1A_WGM10    0							//	Waveform Generation Mode Bit 0
+#define TCCR1A_WGM11    1							//	Waveform Generation Mode Bit 1
+#define TCCR1A_FOC1B    2							//	Force Output Compare for Channel B
+#define TCCR1A_FOC1A    3							//	Force Output Compare for Channel A
+#define TCCR1A_COM1B0   4							//	Compare Output Mode for Channel B Bit 0
+#define TCCR1A_COM1B1   5							//	Compare Output Mode for Channel B Bit 1
+#define TCCR1A_COM1A0   6							//	Compare Output Mode for Channel A Bit 0
+#define TCCR1A_COM1A1   7							//	Compare Output Mode for Channel A Bit 1
+#define TCCR1B_REG      *((volatile u8*)(0x4E))		//	Timer/Counter1 Control Register B
+#define TCCR1B_CS10     0							//	Clock Select Bit 0
+#define TCCR1B_CS11     1							//	Clock Select Bit 1
+#define TCCR1B_CS12     2							//	Clock Select Bit 2
+#define TCCR1B_WGM12    3							//	Waveform Generation Mode Bit 2
+#define TCCR1B_WGM13    4							//	Waveform Generation Mode Bit 3
+#define TCCR1B_ICES1    6							//	Input Capture Edge Select
+#define TCCR1B_ICNC1    7							//	Input Capture Noise Canceler
+#define TCNT1H_REG      *((volatile u8*)(0x4D))		//	Timer/Counter1 Register HIGH
+#define TCNT1L_REG      *((volatile u8*)(0x4C))		//	Timer/Counter1 Register LOW
+#define TCNT1_REG       *((volatile u16*)(0x4C))	//	Timer/Counter1 16-bit Register
+#define OCR1AH_REG      *((volatile u8*)(0x4B))		//	Output Compare Register 1 A HIGH
+#define OCR1AL_REG      *((volatile u8*)(0x4A))		//	Output Compare Register 1 A LOW
+#define OCR1A_REG       *((volatile u16*)(0x4A))	//	Output Compare Register 1 A (16-bit)
+#define OCR1BH_REG      *((volatile u8*)(0x49))		//	Output Compare Register 1 B HIGH
+#define OCR1BL_REG      *((volatile u8*)(0x48))		//	Output Compare Register 1 B LOW
+#define OCR1B_REG       *((volatile u16*)(0x48))	//	Output Compare Register 1 B (16-bit)
+#define ICR1H_REG       *((volatile u8*)(0x47))		//	Input Capture Register 1 HIGH
+#define ICR1L_REG       *((volatile u8*)(0x46))		//	Input Capture Register 1 LOW
+#define ICR1_REG        *((volatile u16*)(0x46))	//	Input Capture Register 1 (16-bit)
+// ---------------------------------------
+
+//	USART registers
+#define UDR_REG		*((volatile u8*)(0x2C))		//	USART Data Register
+#define UCSRA_REG	*((volatile u8*)(0x2B))		//	USART Control and Status Register A
+#define UCSRA_MPCM	0
+#define UCSRA_U2X	1
+#define UCSRA_PE	2							//  Bit is set in case of Parity Error
+#define UCSRA_DOR	3							//  Bit is set in case of Data OverRun
+#define UCSRA_FE	4							//  Bit is set in case of Frame Error
+#define UCSRA_UDRE	5							//  USART Data Register Empty flag
+#define UCSRA_TXC	6							//  USART Transmit Complete flag
+#define UCSRA_RXC	7							//  USART Receive Complete flag
+#define UCSRB_REG	*((volatile u8*)(0x2A))		//	USART Control and Status Register B
+#define UCSRB_TXB8	0
+#define UCSRB_RXB8	1
+#define UCSRB_UCSZ2	2							//  Character Size bit 2
+#define UCSRB_TXEN	3							//  Transmitter Enable
+#define UCSRB_RXEN	4							//  Receiver Enable
+#define UCSRB_UDRIE	5							
+#define UCSRB_TXCIE	6
+#define UCSRB_RXCIE	7
+#define UCSRC_REG	*((volatile u8*)(0x40))		//	USART Control and Status Register C
+#define UCSRC_UCPOL	0
+#define UCSRC_UCSZ0	1							//  Character Size bit 0
+#define UCSRC_UCSZ1	2							//  Character Size bit 1
+#define UCSRC_USBS	3							//  Stop Bit Select (0 = 1-bit, 1 = 2-bit)
+#define UCSRC_UPM0	4							//  Parity Mode Bit 1
+#define UCSRC_UPM1	5							//  Parity Mode Bit 1
+#define UCSRC_UMSEL 6							//  USART Mode Select (0 = Asynchronous, 1 = Synchronous)
+#define UCSRC_URSEL 7							//  Register Select (1 = UCSRC, 0 = UBRRH)
+#define UBRRH_REG	*((volatile u8*)(0x40))
+#define UBRRL_REG	*((volatile u8*)(0x29))		
+// ---------------------------------------
+
+//	SPI registers
+#define SPCR_REG	*((volatile u8*)(0x2D))		//	SPI Control Register
+#define SPCR_SPR0	0							//	SPI Clock Rate Select 0
+#define SPCR_SPR1	1							//	SPI Clock Rate Select 1 
+#define SPCR_CPHA	2							//	Clock Phase
+#define SPCR_CPOL	3							//	Clock Polarity
+#define SPCR_MSTR	4							//	Master/Slave Select
+#define SPCR_DORD	5							//	Data Order
+#define SPCR_SPE	6							//	SPI Enable
+#define SPCR_SPIE	7							//	SPI Interrupt Enable
+#define SPSR_REG	*((volatile u8*)(0x2E))		//	SPI Status Register
+#define SPSR_SPI2X	0							//	Double SPI Speed Bit
+#define SPSR_WCOL	6							//	Write COLlision Flag
+#define SPSR_SPIF	7							//	SPI Interrupt Flag
+#define SPDR_REG	*((volatile u8*)(0x2F))		//	SPI Data Register
+// ---------------------------------------
+
+//	I2C registers
+#define TWBR_REG	*((volatile u8*)(0x20))		//	TWI Bit Rate Register 
+#define TWCR_REG	*((volatile u8*)(0x56))		//	TWI Control Register
+#define TWCR_TWIE	0							//	TWI Interrupt Enable
+#define TWCR_TWEN	2							//	TWI Enable Bit
+#define TWCR_TWWC	3							//	TWI Write Collision Flag
+#define TWCR_TWSTO	4							//	TWI STOP Condition Bit
+#define TWCR_TWSTA	5							//	TWI START Condition Bit
+#define TWCR_TWEA	6							//	TWI Enable Acknowledge Bit
+#define TWCR_TWINT	7							//	TWI Interrupt Flag
+#define TWSR_REG	*((volatile u8*)(0x21))		//	TWI Status Register
+#define TWSR_TWPS0	0							//	TWI Pre-scaler Bit 0
+#define TWSR_TWPS1	1							//	TWI Pre-scaler Bit 1
+#define TWSR_TWS3	3							//	TWI Status 3
+#define TWSR_TWS4	4							//	TWI Status 4
+#define TWSR_TWS5	5							//	TWI Status 5
+#define TWSR_TWS6	6							//	TWI Status 6
+#define TWSR_TWS7	7							//	TWI Status 7
+#define TWDR_REG	*((volatile u8*)(0x23))		//	TWI Data Register
+#define TWAR_REG	*((volatile u8*)(0x22))		//	TWI (Slave) Address 
+#define TWAR_TWGCE	0							//	TWI General Call Recognition Enable Bit
+// ---------------------------------------
+
+//	I2C EEPROM
+#define	EEARH_REG	*((volatile u8*)(0x3F))		//	EEPROM Address Register HIGH
+#define	EEARL_REG	*((volatile u8*)(0x3E))		//	EEPROM Address Register LOW
+#define	EEAR_REG	*((volatile u16*)(0x3E))	//	EEPROM Address Register
+#define	EEDR_REG	*((volatile u8*)(0x3D))		//	EEPROM Data Register
+#define	EECR_REG	*((volatile u8*)(0x3C))		//	EEPROM Control Register
+#define EECR_EERE	0							//	EEPROM Read Enable
+#define	EECR_EEWE	1							//	EEPROM Write Enable
+#define	EECR_EEMWE	2							//	EEPROM Master Write Enable
+#define	EECR_EERIE	3							//	EEPROM Ready Interrupt Enable
+// ---------------------------------------
+
+
+
+#endif /* REGDEF_H_ */
