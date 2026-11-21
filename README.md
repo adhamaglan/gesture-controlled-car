@@ -2,6 +2,8 @@
 
 A wireless, hand-gesture-controlled differential drive car powered by dual **ATmega32** microcontrollers and **HC-05 Bluetooth** modules. A sensor glove reads finger flex angles via buffered ADC channels, encodes posture and throttle into a 3-byte UART packet, and transmits it over Bluetooth to the rover—which drives dual DC motors through an **L293D** H-bridge and displays live status on a **16×2 Character LCD**.
 
+> **Hardware Photos & Driving Demo Videos:** [View Media Folder on Google Drive](https://drive.google.com/drive/folders/1R_S62sMezZv-PLbtHddcLMlap0PDY23Q?usp=drive_link)
+
 ---
 
 ## System Overview
@@ -83,23 +85,6 @@ Runs the rover's control loop on the car's **ATmega32** (`16 MHz`), decoding inc
 * 📄 **`Flex_Sensor_short.pdf`** — Resistive bend sensor electrical specifications.
 * 📄 **`HC-05 and HC-06.pdf`** — Bluetooth serial module AT commands & pinout.
 * 📄 **`L293D.pdf`** / **`LM358.pdf`** / **`LM7805.pdf`** — Motor driver, op-amp, and voltage regulator datasheets.
-</details>
-
-<details>
-<summary>📂 <b>Media/</b> (Hardware Photos & Driving Demos)</summary>
-
-<details>
-<summary>&nbsp;&nbsp;&nbsp;&nbsp;📂 <b>Pictures/</b></summary>
-
-* Hardware assembly photos of the flex-sensor glove transmitter and differential drive car.
-</details>
-
-<details>
-<summary>&nbsp;&nbsp;&nbsp;&nbsp;📂 <b>Videos/</b></summary>
-
-* Live wireless gesture-controlled driving demonstration clips.
-</details>
-
 </details>
 
 <details>
