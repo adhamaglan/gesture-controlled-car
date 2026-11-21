@@ -86,6 +86,23 @@ Runs the rover's control loop on the car's **ATmega32** (`16 MHz`), decoding inc
 </details>
 
 <details>
+<summary>📂 <b>Media/</b> (Hardware Photos & Driving Demos)</summary>
+
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;📂 <b>Pictures/</b></summary>
+
+* Hardware assembly photos of the flex-sensor glove transmitter and differential drive car.
+</details>
+
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;📂 <b>Videos/</b></summary>
+
+* Live wireless gesture-controlled driving demonstration clips.
+</details>
+
+</details>
+
+<details>
 <summary>📂 <b>Schematics/</b> (KiCad Circuit Diagrams)</summary>
 
 * 📄 **`hand_module.pdf`** — Glove transmitter circuit schematic.
